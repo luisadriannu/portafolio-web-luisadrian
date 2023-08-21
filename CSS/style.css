@@ -1,7 +1,7 @@
 /* **********Custom properties ********** */
 :root {
   --first-color: #149eca;
-  --first-opacity-color: rgba(20, 158, 202, 0.75);
+  --first-opacity-color: rgba(20, 156, 202, 0.487);
   --first-alpha-color: #4dc6ed;
   --second-bg-color: rgba(35, 39, 50);
   --second-color: #23272f;
@@ -91,9 +91,8 @@ p {
 .btn-scroll-top {
   z-index: 995;
   position: fixed;
-  top: 2rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 8rem;
+  left: 0.5rem;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -102,7 +101,7 @@ p {
   height: 3rem;
   background-color: var(--first-opacity-color);
   backdrop-filter: blur(16px);
-  animation: animation-btn-dark 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,14 +111,15 @@ p {
   z-index: 995;
   position: fixed;
   bottom: 4.5rem;
-  right: 1rem;
+  left: 0.5rem;
   border-radius: 50%;
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
   width: 3rem;
   height: 3rem;
-  background-color: var(--first-color);
+  background-color: var(--first-opacity-color);
+  backdrop-filter: blur(16px);
 }
 
 .btn-tools {
@@ -430,6 +430,10 @@ p {
   display: none;
 }
 
+.hidde {
+  opacity: 0;
+}
+
 .section {
   padding: 2rem 1rem;
 }
@@ -523,18 +527,6 @@ p {
   100% {
     opacity: 0;
     transform: translateY(100%);
-  }
-}
-
-@keyframes zoomOutFadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(1.1);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 
@@ -655,8 +647,7 @@ p {
   padding: 1rem;
   width: 100%;
   height: var(--header-height);
-  background-color: var(--white-color);
-  animation: zoomOutFadeIn 0.5s cubic-bezier(0.5, 0.7, 0.7, 1);
+  transition: opacity 0.3s ease;
 }
 
 .header > .container {
@@ -881,13 +872,11 @@ p {
 
   .btn-dark-mode {
     top: 4rem;
+    left: 1rem;
   }
 
   .btn-scroll-top {
-    bottom: 2rem;
-    left: 2rem;
-    width: 4rem;
-    height: 4rem;
+    display: none;
   }
 
   .contact-form {
@@ -937,10 +926,10 @@ p {
   }
 
   .header {
-    position: sticky;
+    position: fixed;
     top: 0;
     padding: 0;
-    height: auto;
+    height: 56px;
   }
 
   html {

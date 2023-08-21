@@ -43,26 +43,20 @@ const typed = new Typed(".typed", {
 });
 
 // Show Elements
-const $btnLightMode = d.querySelector(".btn-dark-mode"),
-  $header = d.querySelector(".header"),
+const $header = d.querySelector(".header"),
   $indicador = d.querySelector(".indicador"),
   $scroll = d.querySelector(".btn-scroll-top");
 
 w.addEventListener("scroll", (e) => {
-  if (scrollY >= 100) {
-    $btnLightMode.classList.remove("none");
+  if (scrollY >= 300) {
+    $header.classList.remove("hidde");
   } else {
-    $btnLightMode.classList.add("none");
+    $header.classList.add("hidde");
   }
-  if (scrollY >= 100) {
-    $header.classList.remove("none");
+  if (scrollY >= 1800) {
+    $scroll.classList.remove("hidde");
   } else {
-    $header.classList.add("none");
-  }
-  if (scrollY >= 800) {
-    $scroll.classList.remove("none");
-  } else {
-    $scroll.classList.add("none");
+    $scroll.classList.add("hidde");
   }
 });
 
