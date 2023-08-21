@@ -91,16 +91,21 @@ p {
 .btn-scroll-top {
   z-index: 995;
   position: fixed;
-  bottom: 4.5rem;
-  left: 1rem;
+  top: 2rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
   width: 3rem;
   height: 3rem;
-  background-color: var(--first-color);
+  background-color: var(--first-opacity-color);
+  backdrop-filter: blur(16px);
   animation: animation-btn-dark 0.3s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-dark-mode {
@@ -480,11 +485,10 @@ p {
 
 @keyframes animation-btn-dark {
   0% {
-    transform: translateY(100%);
     opacity: 0;
   }
   100% {
-    transform: translateY(0%);
+    opacity: 1;
   }
 }
 
