@@ -120,6 +120,10 @@ p {
   height: 3rem;
   background-color: var(--first-opacity-color);
   backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-tools {
@@ -373,11 +377,13 @@ p {
 .modal-content {
   position: relative;
 }
+
 .modal-close {
   position: absolute;
   top: 1rem;
   right: 1rem;
 }
+
 .modal-close svg {
   width: 3rem;
   height: 3rem;
@@ -453,6 +459,10 @@ p {
 
 .text-center {
   text-align: center;
+}
+
+.p-1 {
+  padding: 1rem;
 }
 
 .text-left {
@@ -748,6 +758,7 @@ p {
   max-width: 400px;
   display: flex;
   flex-direction: column;
+  max-height: 800px;
 }
 
 .portfolio-modal h3 {
@@ -765,6 +776,7 @@ p {
   grid-template-columns: 40% 60%;
   grid-auto-rows: 2rem;
 }
+
 .portfolio-details b {
   color: var(--first-color);
 }
@@ -826,17 +838,8 @@ p {
     gap: 1vw;
   }
 
-  .portfolio-modal {
-    flex-direction: row;
-    max-width: 800px;
-  }
-  .portfolio-modal > div {
-    height: 100%;
-  }
-
   .portfolio-info {
-    margin: 1rem;
-    align-self: center;
+    margin: 0 1rem;
   }
 
   .services > .container {
@@ -871,8 +874,11 @@ p {
   }
 
   .btn-dark-mode {
+    left: auto;
     top: 4rem;
-    left: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
   }
 
   .btn-scroll-top {
@@ -998,20 +1004,21 @@ p {
     box-shadow: none;
   }
 
-  /* .portfolio > .container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5vw;
-  } */
+  .portfolio-modal {
+    flex-direction: row;
+    max-width: 800px;
+  }
 
   .portfolio-modal > img {
     border-radius: 0.5rem;
     background-size: cover;
-    width: 55%;
-    height: 55%;
+    width: 50%;
   }
+
   .portfolio .section-title {
     grid-column: span 3;
   }
+
   .services > .container {
     grid-template-columns: repeat(3, 30%);
   }
